@@ -1,0 +1,84 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 2.0 (448.60.4)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    reorder nameChildren = ["Room", "Interviewer", "Interviewee"]
+    def "Room" (
+        active = true
+        references = @MEETING_ROOM.usdz@
+    )
+    {
+        float3 xformOp:scale = (0.01, 0.01, 0.01)
+        float3 xformOp:translate = (-0.31329364, 0.26368797, 0.57477146)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
+
+    def "Interviewer" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, -0.78539807, 0)
+        }
+        references = @male_character.usdz@
+    )
+    {
+        quatf xformOp:orient = (0.92387956, 0, -0.3826834, 0)
+        float3 xformOp:scale = (0.015, 0.015, 0.015)
+        float3 xformOp:translate = (1.669237, 0.3541578, -0.37018913)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        over "Materials"
+        {
+            over "Wolf3D_Eye"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+            }
+
+            over "Wolf3D_Body"
+            {
+                token outputs:mtlx:surface
+                token outputs:realitykit:vertex
+
+                over "pbr_shader"
+                {
+                    float inputs:roughness = 0.5
+                }
+            }
+        }
+    }
+
+    def "Interviewee" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (1.4137166, 1.5707963, 3.1415925)
+        }
+        references = @Untitled.usdc@
+    )
+    {
+        quatf xformOp:orient = (0.4592291, -0.53768814, 0.4592291, 0.53768826)
+        float3 xformOp:scale = (1, 1, 1)
+        float3 xformOp:translate = (-0.40498704, 0.21229875, 1.0500498)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def RealityKitComponent "AnimationLibrary"
+        {
+            uniform token info:id = "RealityKit.AnimationLibrary"
+        }
+    }
+
+    def "Untitled"
+    {
+        def "rp_claudia_rigged_002"
+        {
+        }
+    }
+}
+

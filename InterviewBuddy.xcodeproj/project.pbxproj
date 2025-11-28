@@ -241,6 +241,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "此 App 需要使用麥克風來聽你作答，並提供即時轉文字與回饋。";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "此 App 會將你的語音傳送到 Apple 的語音辨識服務以轉成文字，僅用於面試練習。";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -267,6 +270,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "此 App 需要使用麥克風來聽你作答，並提供即時轉文字與回饋。";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "此 App 會將你的語音傳送到 Apple 的語音辨識服務以轉成文字，僅用於面試練習。";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
